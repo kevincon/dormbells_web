@@ -1,4 +1,5 @@
 # Django settings for dormbells project.
+import os.path
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -79,11 +80,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'dormbells.urls'
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-    "/home/kevin/dormbells2/repo/dormbells/templates",
-    "/home/kevin/dormbells/repo/dormbells/templates"
+    os.path.join(os.path.dirname(__file__), 'templates').replace('\\','/'),
 )
 
 INSTALLED_APPS = (
