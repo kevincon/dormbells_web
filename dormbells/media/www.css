@@ -24,9 +24,9 @@ text-shadow: 0.1em 0.1em black;
 {
 width:100%;
 margin:0;
-padding-top:30px;
+padding-top:10px;
 background-color:#1B84E0;
-height:70px;
+height:100px;
 }
 
 #sitename
@@ -48,6 +48,7 @@ font-size:48px;
 #navigation
 {
 top:0;
+height:50px;
 }
 
 #navigation ul
@@ -61,7 +62,7 @@ padding-bottom:0px;
 
 #navigation li
 {
-float:left;
+float:right;
 padding:10px;
 }
 
@@ -77,6 +78,12 @@ font-family:helvetica, sans-serif;
 #navigation a:hover
 {
 color:gold;
+}
+
+#logged-in
+{
+height:20px;
+float:right;
 }
 
 #gold-bar
