@@ -96,14 +96,19 @@ color:black;
 font-family:helvetica, sans-serif;
 }
 
-#logged-in a:link
+#logged-in a
 {
-color:blue;
+text-decoration:none;
 }
 
-#logged-in a:visited
+#logged-in a:link,a:visited
 {
-color:purple;
+color:white;
+}
+
+#logged-in a:hover
+{
+color:gold;
 }
 
 #gold-bar
