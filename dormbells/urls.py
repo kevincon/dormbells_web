@@ -1,4 +1,5 @@
 from django.conf.urls.defaults import *
+from dormbells import settings
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -14,6 +15,7 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     # (r'^admin/', include(admin.site.urls)),
 
-    url(r'^$', 'django.views.generic.simple.direct_to_template', {'template': 'homepage.html'}, name="homepage"),
-    (r'^ring/', include('ring.urls')),
+    url(r'^$', 'django.views.generic.simple.direct_to_template', {'template': 'index.html'}, name="homepage"),
+    url(r'^mymedia/(?P<path>.*)$', 'django.views.static.serve',
+	{'document_root':	settings.MEDIA_ROOT}),
 )
