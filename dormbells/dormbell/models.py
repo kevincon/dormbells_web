@@ -39,3 +39,12 @@ class SMSRinger(Ringer):
     carrier = models.CharField(max_length=40, choices=CARRIERS)
     address = models.CharField(max_length=50)
 
+    def ring(self):
+        title = ""
+	message = render_to_string("ring.txt", {})
+	#FIXME Construct URL using phone number and carrier for recipients
+	constructed_email = self.phone_number + '@txt.att.net'
+	recipients = [constructed_email,]#self.cleaned_data['email'],]
+	sender = 'Dormbells'
+	send_mail(title, message, sender, recipient_list=recipients)
+

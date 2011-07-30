@@ -36,5 +36,5 @@ def ringer(request, uuid):
     button = QRButton.objects.get(uuid=uuid)
     dormbell = button.dormbell
     ringer = dormbell.smsringer_set.all()[0]
-    
+    ringer.ring()
     return HttpResponse("ring! %s" % ringer.phone_number)
