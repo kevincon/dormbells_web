@@ -11,7 +11,7 @@ class NumberForm(forms.Form):
 	('TMOBILE', 'T-Mobile'),
 	('USCELLULAR', 'US Cellular'),
 	('VERIZON', 'Verizon'),
-	('VIRGIN', 'VIRGIN MOBILE'),
+	('VIRGIN', 'Virgin Mobile'),
     )
     carrier = forms.ChoiceField(choices=CARRIERS)
 
