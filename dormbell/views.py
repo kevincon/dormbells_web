@@ -1,11 +1,37 @@
-# Create your views here.
-from django.contrib.auth.models import User
-from django.http import render_to_response, Http404
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render_to_response
+from django.template import RequestContext
 
-def account_page(request, username):
-	try:
-		user = User.objects.get(username=username)
-	except User.DoesNotExist:
-		raise Http404(u'Requested user not found.')
-	
-	
+from forms import ConfirmationCodeForm
+
+
+def index(request):
+    if request.method == 'POST':
+        form = ConfirmationCodeForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/confirm/')
+    else:
+        form = ConfirmationCodeForm()
+    return render_to_response('index.html', RequestContext(request, {
+        'form': form,
+    }))
+
+def create_confirm(request):
+    if request.method == 'POST':
+        form = ConfirmationCodeForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/bell/success/')
+    else:
+        form = ConfirmationCodeForm()
+
+    return render_to_response('confirm.html', RequestContext(request, {
+        'form': form,
+    }))
+
+def success(request):
+    return HttpResponse("create_success")
+
+def delete_confirm(request):
+    return HttpResponse("delete_confirm")
