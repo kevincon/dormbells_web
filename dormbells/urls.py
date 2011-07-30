@@ -1,5 +1,6 @@
 from django.conf.urls.defaults import *
-from dormbells import settings
+
+from local_setting import MEDIA_ROOT
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -39,5 +40,5 @@ urlpatterns = patterns('',
 
     #Media for CSS 
     url(r'^mymedia/(?P<path>.*)$', 'django.views.static.serve',
-	{'document_root':	settings.MEDIA_ROOT}),
+	{'document_root':	MEDIA_ROOT}),
 )
