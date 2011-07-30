@@ -28,11 +28,8 @@ def create_confirm(request):
         'form': form,
     })
 
-def create_success(request):
+def success(request):
     return HttpResponse("create_success")
 
 def delete_confirm(request):
     return HttpResponse("delete_confirm")
-
-def delete_success(request):
-    return HttpResponse("delete_success")
