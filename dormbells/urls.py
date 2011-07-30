@@ -1,5 +1,6 @@
 from django.conf.urls.defaults import *
 
+import bell.urls
 from local_settings import MEDIA_ROOT
 
 # Uncomment the next two lines to enable the admin:
@@ -16,9 +17,11 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     # (r'^admin/', include(admin.site.urls)),
 
+    url(r'^bell/', include(bell.urls)),
+
     #Browsing
     url(r'^$', 'django.views.generic.simple.direct_to_template', {'template': 'index.html'}, name="homepage"),
-    
+
     #Account management
     #(r'^account/$', account),
     #(r'^account/edit/$', account_edit),
@@ -42,5 +45,3 @@ urlpatterns = patterns('',
     url(r'^mymedia/(?P<path>.*)$', 'django.views.static.serve',
 	{'document_root': MEDIA_ROOT}),
 )
-
-print MEDIA_ROOT
