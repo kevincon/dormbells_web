@@ -11,7 +11,7 @@ urlpatterns = patterns('',
     #url(r'^delete/confirm/$', delete_confirm),
 
     #generic successs
-    #url(r'^success/$', success),
+    url(r'^success/$', success),
     url(r'^$', index),
     url(r'^(\w{32})$', ringer),
 )

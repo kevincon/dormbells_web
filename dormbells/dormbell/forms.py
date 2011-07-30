@@ -21,5 +21,5 @@ class DormbellCreationForm(DeferredForm):
 	send_mail(title, message, sender, recipient_list=recipients)
 
     class Meta:
-        model = Dormbell 
-        fields = ('activated',)
+        model = User
+        fields = ('email',)

@@ -25,9 +25,7 @@ def confirm_by_form(request, template_name='confirm.html',
         if form.is_valid():
             form.save()
             if success_url is None:
-                return render_to_response(success_template_name, 
-                    {'success_message': success_message}, 
-                    context_instance=RequestContext(request))
+                return HttpResponseRedirect('/success/')
             else:
                 if success_message is not None and request.user.is_authenticated():
                     request.user.message_set.create(message=success_message)
