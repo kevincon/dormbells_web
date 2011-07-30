@@ -11,6 +11,7 @@ class Dormbell(AuditModel):
     creation_date = fields.CreationDateTimeField()
     location = name = models.CharField(max_length=100, blank=True, null=True)
     name = models.CharField(max_length=100)
+    token = fields.UUIDField()
     user = models.ForeignKey(User, related_name='dormbells', null=True, blank=True)
     wait_time_limit = models.IntegerField() #in seconds
     
