@@ -19,23 +19,23 @@ urlpatterns = patterns('',
     url(r'^$', 'django.views.generic.simple.direct_to_template', {'template': 'index.html'}, name="homepage"),
     
     #Account management
-    (r'^account/$', account),
-    (r'^account/edit/$', account_edit),
+    #(r'^account/$', account),
+    #(r'^account/edit/$', account_edit),
 
     #Dormbell management
-    (r'^dormbell/$', dormbell),
-    (r'^dormbell/(\w+)/add$', dormbell_add),
-    (r'^dormbell/(\w+)/edit$', dormbell_edit),
+    #(r'^dormbell/$', dormbell),
+    #(r'^dormbell/(\w+)/add$', dormbell_add),
+    #(r'^dormbell/(\w+)/edit$', dormbell_edit),
 
     #Ringer management
-    (r'^ringer/$', ringer),
-    (r'^ringer/add/$', ringer_add),
-    (r'^ringer/(\w+)/edit$', ringer_edit),
+    #(r'^ringer/$', ringer),
+    #(r'^ringer/add/$', ringer_add),
+    #(r'^ringer/(\w+)/edit$', ringer_edit),
    
     #Button management
-    (r'^button/$', button),
-    (r'^button/add/$', button_add),
-    (r'^button/edit/$', button_edit),  
+    #(r'^button/$', button),
+    #(r'^button/add/$', button_add),
+    #(r'^button/edit/$', button_edit),  
 
     #Media for CSS 
     url(r'^mymedia/(?P<path>.*)$', 'django.views.static.serve',

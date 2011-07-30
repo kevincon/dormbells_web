@@ -1,5 +1,6 @@
 # Django settings for dormbells project.
 import os.path
+import local_settings
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -10,17 +11,6 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'dormbells',                      # Or path to database file if using sqlite3.
-        'USER': 'kevin',                      # Not used with sqlite3.
-        'PASSWORD': 'mysqlpass',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
-    }
-}
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -47,7 +37,7 @@ USE_L10N = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = '/home/kevin/dormbells/repo/dormbells/media'
+# MEDIA_ROOT = '/home/kevin/dormbells2/repo/dormbells/media'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
