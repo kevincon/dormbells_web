@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>Dormbells</title>
+<link rel="stylesheet" type="text/css" href="/mymedia/www.css" />
+</head>
+
+<body>
+<div id="banner">
+	<div id="logged-in">
+		{% if user.is_authenticated %}
+			<p>{{ user.email }} | <a href="#">Logout</a></p>
+		{% else %}
+			<p><a href="#">Create Account</a> | <a href="#">Login</a></p>
+		{% endif %}
+	</div>	
+	<div id="sitename">
+	<h1 id="sitename" class="text-shadow"><a href="#">Dormbells</a></h1>
+	</div>
+	<div id="navigation">
+		<ul>
+		<li><h2><a href="#">About</a></h2></li>
+		<li><h2><a href="#">Hackers</a></h2></li>
+		<li><h2><a href="#">Blog</a></h2></li>
+		</ul>
+	</div>
+</div>
+<div id="gold-bar"></div> 
+<div id="content">
+{% block content %}{% endblock %}
+</div>
+<div class="clear"></div>
+<div id="footer">
+	<h3 id="footer">Copyright Kevin Conley 2011</h3>
+</div>
+</body>
+
+</html>
