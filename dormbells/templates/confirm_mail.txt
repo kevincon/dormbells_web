@@ -1,1 +1,1 @@
-Your confirmation code is {{token}}.
+Your confirmation code is {{token}}
