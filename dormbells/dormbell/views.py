@@ -45,9 +45,10 @@ def index(request):
 def success(request):
     #TODO Construct URL for QR Code
     phone_number = request.session['phone_number']
-    ringer = SMSRinger.objects.get(phone_number=phone_number)
+    ringer = SMSRinger.objects.filter(phone_number=phone_number)
     if ringer:
-        dormbell = ringer.dormbell
+        ringer=ringer[0]
+	dormbell = ringer.dormbell
         button = QRButton.objects.get(dormbell=dormbell)
         new_uuid = button.uuid
     else:
