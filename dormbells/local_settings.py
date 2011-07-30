@@ -1,8 +1,8 @@
-MEDIA_ROOT = '/home/kevin/dormbells2/repo/dormbells/media'
+MEDIA_ROOT = 'C:/Users/Ceasar/Desktop/dormbells2/repo/dormbells/media'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'dormbells',                      # Or path to database file if using sqlite3.
         'USER': 'kevin',                      # Not used with sqlite3.
         'PASSWORD': 'mysqlpass',                  # Not used with sqlite3.
