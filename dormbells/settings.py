@@ -1,6 +1,6 @@
 # Django settings for dormbells project.
 import os.path
-import local_settings
+from local_settings import MEDIA_ROOT, DATABASES
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
