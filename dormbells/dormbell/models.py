@@ -1,11 +1,10 @@
 from django.contrib.auth.models import User
 from django.db import models
-from django_extensions.db import fields
 
 
 class Dormbell(models.Model):
     consecutive_limit = models.IntegerField()
-    creation_date = fields.CreationDateTimeField()
+    creation_date = models.DateTimeField()
     location = name = models.CharField(max_length=100, blank=True, null=True)
     name = models.CharField(max_length=100)
     user = models.ForeignKey(User, related_name='dormbells', null=True, blank=True)
@@ -15,7 +14,7 @@ class Button(models.Model):
     class Meta:
         abstract = True
 
-    creation_date = fields.CreationDateTimeField()
+    creation_date = models.DateTimeField()
     dormbell = models.ForeignKey(Dormbell)
     name = models.CharField(max_length=100)
 
@@ -27,7 +26,7 @@ class Ringer(models.Model):
     class Meta:
         abstract = True
 
-    creation_date = fields.CreationDateTimeField()
+    creation_date = models.DateTimeField()
     dormbell = models.ForeignKey(Dormbell)
     name = models.CharField(max_length=100)
 
