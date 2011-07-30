@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Coming soon!</h1>
+<h1>Sign up for a Dormbell!</h1>
+<form action="/bell/create/confirm" method="post">{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="Submit" />
+</form>
+
 {% endblock %}

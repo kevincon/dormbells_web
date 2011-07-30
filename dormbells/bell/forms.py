@@ -1,7 +1,14 @@
 from django import forms
 
 class NumberForm(forms.Form):
-    number = forms.CharField()
+    phone_number = forms.CharField(max_length=10)
+    CARRIERS = (
+        ('AT&T', 'AT&T'),
+        ('VERIZON', 'Verizon'),
+	('SPRINT', 'Sprint'),
+	('TMOBILE', 'T-Mobile'),
+    )
+    carrier = forms.ChoiceField(choices=CARRIERS)
 
 class ConfirmationCodeForm(forms.Form):
-    code = forms.CharField()
+    code = forms.CharField(max_length=4)
