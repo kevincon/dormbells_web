@@ -40,5 +40,7 @@ urlpatterns = patterns('',
 
     #Media for CSS 
     url(r'^mymedia/(?P<path>.*)$', 'django.views.static.serve',
-	{'document_root':	MEDIA_ROOT}),
+	{'document_root': MEDIA_ROOT}),
 )
+
+print MEDIA_ROOT
