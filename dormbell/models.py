@@ -16,7 +16,7 @@ class Button(models.Model):
         abstract = True
 
     creation_date = fields.CreationDateTimeField()
-    dormbell = models.ForeignKey(Dormbell, related_name='buttons')
+    dormbell = models.ForeignKey(Dormbell)
     name = models.CharField(max_length=100)
 
 
@@ -28,7 +28,7 @@ class Ringer(models.Model):
         abstract = True
 
     creation_date = fields.CreationDateTimeField()
-    dormbell = models.ForeignKey(Dormbell, related_name='ringers')
+    dormbell = models.ForeignKey(Dormbell)
     name = models.CharField(max_length=100)
 
 class EmailRinger(Ringer):
