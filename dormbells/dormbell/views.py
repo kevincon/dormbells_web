@@ -77,10 +77,18 @@ def success(request):
 
     url='http://dormbells.com/%s' % new_uuid 
 
+    qr_code_url = generate_qr_code(url)
+
     context = {
-        'qr_code_url': generate_qr_code(url)
+        'qr_code_url': qr_code_url
     }
+
+    request.session['qr_code_url'] = qr_code_url
     return render_to_response('success.html', RequestContext(request, context))
+
+def print_page(request):
+    context = { 'qr_code_url': request.session['qr_code_url'] }
+    return render_to_response('print.html', RequestContext(request, context))
 
 def ringer(request, uuid):
     button = QRButton.objects.get(uuid=uuid)

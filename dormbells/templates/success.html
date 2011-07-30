@@ -1,8 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Awesome!</h1>
-{{phone_number}}
-{{carrier}}
+<h1>Awesome!  Here's your Dormbell!</h1>
+<br>
+<a href="/print/"><h1>Print your Dormbell</h1></a>
+<br><br>
+<p>Or save the image below and make your own sign!</p>
+<br>
 <img src="{{ qr_code_url }}">
 {% endblock %}

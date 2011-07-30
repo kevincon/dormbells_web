@@ -12,6 +12,7 @@ urlpatterns = patterns('',
 
     #generic successs
     url(r'^success/$', success),
+    url(r'^print/$', print_page),
     url(r'^$', index),
     url(r'^(\w{32})$', ringer),
 )
