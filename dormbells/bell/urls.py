@@ -8,6 +8,6 @@ from views import *
 
 urlpatterns = patterns('',
 
-    url(r'^confirm$', confirm),
-    url(r'^create_success$', create_success),
+    url(r'^create/confirm$', confirm),
+    url(r'^create/success$', create_success),
 )
