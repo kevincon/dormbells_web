@@ -23,16 +23,3 @@ class DormbellCreationForm(DeferredForm):
     class Meta:
         model = Dormbell 
         fields = ('activated',)
-
-class ConfirmationCodeForm(DeferredForm):
-    def send_notification(self, user=None, instance=None):
-        title = ""
-        message = render_to_string("confirm_mail.txt",
-                                   {'token': instance.token, 'user': user})
-        recipients = [self.cleaned_data['email'],]
-        sender = 'Dormbells'
-        send_mail(title, message, sender, recipient_list=recipients)
-
-    class Meta:
-        model = Dormbell #Don't think this will work
-        fields = ('email',)
