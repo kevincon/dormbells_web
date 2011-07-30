@@ -13,5 +13,29 @@ class Dormbell(AuditModel):
     name = models.CharField(max_length=100)
     user = models.ForeignKey(User, related_name='dormbells', null=True, blank=True)
     wait_time_limit = models.IntegerField() #in seconds
-    
 
+class Button(models.Model):
+    class Meta:
+        abstract = True
+
+    creation_date = fields.CreationDateTimeField()
+    dormbell = models.ForeignKey(Dormbell, related_name='buttons')
+    name = models.CharField(max_length=100)
+
+
+class QRButton(Button):
+    pass
+
+class Ringer(models.Model):
+    class Meta:
+        abstract = True
+
+    creation_date = fields.CreationDateTimeField()
+    dormbell = models.ForeignKey(Dormbell, related_name='ringers')
+    name = models.CharField(max_length=100)
+
+class EmailRinger(Ringer):
+    email = models.EmailField()
+
+class SMSRinger(Ringer):
+    phone_number = models.CharField(max_length=20)
