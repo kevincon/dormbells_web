@@ -14,6 +14,7 @@ def index(request):
     
     return render_to_response('index.html', {
         'form': form,
+        'carriers': ["AT&T", "Boost Mobile", "Cricket", "Metro PCS", "T-Mobile", "US Cellular", "Virgin Mobule"] 
     })
 
 def create_confirm(request):
