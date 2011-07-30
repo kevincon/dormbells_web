@@ -1,3 +1,5 @@
+from django.template.loader import render_to_string
+from django.core.mail import send_mail
 from django.contrib.auth.models import User
 from django.db import models
 from carriers import CARRIERS
@@ -9,7 +11,6 @@ class Dormbell(models.Model):
     name = models.CharField(max_length=100)
     user = models.ForeignKey(User, related_name='dormbells', null=True, blank=True)
     wait_time_limit = models.IntegerField() #in seconds
-    activated = models.BooleanField()    
 
 class Button(models.Model):
     class Meta:
@@ -41,10 +42,12 @@ class SMSRinger(Ringer):
 
     def ring(self):
         title = ""
-	message = render_to_string("ring.txt", {})
-	#FIXME Construct URL using phone number and carrier for recipients
-	constructed_email = self.phone_number + '@txt.att.net'
-	recipients = [constructed_email,]#self.cleaned_data['email'],]
-	sender = 'Dormbells'
-	send_mail(title, message, sender, recipient_list=recipients)
+        message = render_to_string("ring.txt", {})
+        #FIXME Construct URL using phone number and carrier for recipients
+        constructed_email = self.phone_number + '@txt.att.net'
+        recipients = [constructed_email,]#self.cleaned_data['email'],]
+        sender = 'Dormbells'
+        send_mail(title, message, sender, recipient_list=recipients)
 
+class Empty(models.Model):
+	pass

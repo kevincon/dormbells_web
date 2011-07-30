@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from generic_confirmation.forms import DeferredForm
-from models import Dormbell
+from models import Dormbell, Empty
 from carriers import CARRIERS
 
 class DormbellCreationForm(DeferredForm):
@@ -21,5 +21,5 @@ class DormbellCreationForm(DeferredForm):
 	send_mail(title, message, sender, recipient_list=recipients)
 
     class Meta:
-        model = User
-        fields = ('email',)
+        model = Empty 
+        fields = ('id',) 
