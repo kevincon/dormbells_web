@@ -15,8 +15,9 @@ class DormbellCreationForm(DeferredForm):
 	message = render_to_string("confirm_mail.txt",
 				{'token': instance.token, 'user': user})
 	#FIXME Construct URL using phone number and carrier for recipients
-	recipients = ['kevindconley@gmail.com',]#self.cleaned_data['email'],]
-	sender = 'bot@dormbells.com'
+	constructed_email = self.cleaned_data['phone_number'] + '@txt.att.net'
+	recipients = [constructed_email,]#self.cleaned_data['email'],]
+	sender = 'Dormbells'
 	send_mail(title, message, sender, recipient_list=recipients)
 
     class Meta:
