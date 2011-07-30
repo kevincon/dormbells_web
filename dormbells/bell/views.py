@@ -1,5 +1,6 @@
 from models import *
 from django.http import HttpResponse
+from django.shortcuts import render_to_response
 
 from forms import ConfirmationCodeForm, NumberForm
 
@@ -15,7 +16,7 @@ def index(request):
         'form': form,
     })
 
-def confirm(request):
+def create_confirm(request):
     if request.method == 'POST':
         form = ConfirmationCodeForm(request.POST)
         if form.is_valid():
