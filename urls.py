@@ -17,8 +17,8 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     # (r'^admin/', include(admin.site.urls)),
 
-    url(r'^bell/', include(dormbell.urls)),
     url(r'^confirm/', include('generic_confirmation.urls')),
+    url(r'^', include(dormbell.urls)),
 
     #Browsing
     url(r'^$', 'django.views.generic.simple.direct_to_template', {'template': 'index.html'}, name="homepage"),
