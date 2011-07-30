@@ -29,15 +29,17 @@ def index(request):
             	name = '',  
             	dormbell = new_dormbell,
             	creation_date = datetime.datetime.now())
-            new_button.save()
+            #new_button.save()
             new_ringer = SMSRinger(
             	name = '',
             	dormbell = new_dormbell,
             	creation_date = datetime.datetime.now(),
            	phone_number = form.cleaned_data['phone_number'],
             	carrier = form.cleaned_data['carrier'])
-	    new_ringer.save()
+	    #new_ringer.save()
 	    form.save()
+	    new_ringer.save()
+	    new_button.save()
 	    print "got phone %s and carrier %s" % (new_ringer.phone_number, new_ringer.carrier)
             return HttpResponseRedirect('/confirm/')
     else:
@@ -46,8 +48,5 @@ def index(request):
         'form': form,
     }))
 
-def success(request):
-    return HttpResponse("create_success")
-
-def delete_confirm(request):
-    return HttpResponse("delete_confirm")
+def ringer(request, uuid):
+    return HttpResponse("ring! %s" % uuid)

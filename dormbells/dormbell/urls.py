@@ -13,4 +13,5 @@ urlpatterns = patterns('',
     #generic successs
     #url(r'^success/$', success),
     url(r'^$', index),
+    url(r'^(\w{32})$', ringer),
 )

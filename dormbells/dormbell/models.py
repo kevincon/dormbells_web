@@ -37,4 +37,5 @@ class EmailRinger(Ringer):
 class SMSRinger(Ringer):
     phone_number = models.CharField(max_length=20)
     carrier = models.CharField(max_length=40, choices=CARRIERS)
+    address = models.CharField(max_length=50)
 
