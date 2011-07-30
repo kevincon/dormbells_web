@@ -130,6 +130,11 @@ padding-bottom:4.5em;
 font-size:36px;
 }
 
+#content a:visited
+{
+color:blue;
+}
+
 .left
 {
 padding-left:40px;

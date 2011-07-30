@@ -11,6 +11,7 @@ urlpatterns = patterns('',
     #url(r'^delete/confirm/$', delete_confirm),
 
     #generic successs
+    url(r'^about/$', about),
     url(r'^success/$', success),
     url(r'^print/$', print_page),
     url(r'^$', index),
