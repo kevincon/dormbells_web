@@ -12,6 +12,6 @@ class Dormbell(AuditModel):
     location = name = models.CharField(max_length=100, blank=True, null=True)
     name = models.CharField(max_length=100)
     user = models.ForeignKey(User, related_name='dormbells', null=True, blank=True)
-    wait_time_limit = models.TimeField()
+    wait_time_limit = models.IntegerField() #in seconds
     
 
