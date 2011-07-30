@@ -100,4 +100,4 @@ def ringer(request, uuid):
     dormbell = button.dormbell
     ringer = SMSRinger.objects.get(dormbell=dormbell)
     ringer.ring()
-    return HttpResponse("ring! %s" % ringer.phone_number)
+    return HttpResponse("")
