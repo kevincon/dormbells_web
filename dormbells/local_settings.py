@@ -1,6 +1,6 @@
 import os.path
 
-PROJECT_ROOT = '/home/kevin/dormbells2/repo/'
+PROJECT_ROOT = '/home/kevin/dormbells2/repo/dormbells/'
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
 
 DATABASES = {
