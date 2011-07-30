@@ -2,11 +2,8 @@ from django.contrib.auth.models import User
 from django.db import models
 from django_extensions.db import fields
 
-from buttons import *
-from ringers import *
 
-
-class Dormbell(AuditModel):
+class Dormbell(models.Model):
     consecutive_limit = models.IntegerField()
     creation_date = fields.CreationDateTimeField()
     location = name = models.CharField(max_length=100, blank=True, null=True)
@@ -39,3 +36,5 @@ class EmailRinger(Ringer):
 
 class SMSRinger(Ringer):
     phone_number = models.CharField(max_length=20)
+
+
