@@ -2,7 +2,7 @@
 
 {% block content %}
 <h1>Sign up for a Dormbell!</h1>
-<form action="/bell/create/confirm" method="post">
+<form action="/bell/" method="post">{% csrf_token %}
 {{ form }}
 <input type="submit" value="Submit" />
 </form>

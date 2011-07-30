@@ -10,6 +10,13 @@ ADMINS = (
     ('Kevin Conley', 'kevin@dormbells.com')
 )
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_PASSWORD = 'hackdaypass'
+EMAIL_HOST_USER = 'bot@dormbells.com'
+EMAIL_SUBJECT_PREFIX = 'g'
+EMAIL_USE_TLS = True
+
 MANAGERS = ADMINS
 
 # Local time zone for this installation. Choices can be found here:
@@ -84,4 +91,5 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'bell',
+    'generic_confirmation',
 )

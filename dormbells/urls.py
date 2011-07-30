@@ -18,6 +18,7 @@ urlpatterns = patterns('',
     # (r'^admin/', include(admin.site.urls)),
 
     url(r'^bell/', include(bell.urls)),
+    url(r'^confirm/', include('generic_confirmation.urls')),
 
     #Browsing
     url(r'^$', 'django.views.generic.simple.direct_to_template', {'template': 'index.html'}, name="homepage"),
