@@ -1,6 +1,6 @@
 from django.conf.urls.defaults import *
 
-import bell.urls
+import dormbell.urls
 from local_settings import MEDIA_ROOT
 
 # Uncomment the next two lines to enable the admin:
@@ -17,11 +17,11 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     # (r'^admin/', include(admin.site.urls)),
 
-    url(r'^bell/', include(bell.urls)),
     url(r'^confirm/', include('generic_confirmation.urls')),
+    url(r'^', include(dormbell.urls)),
 
     #Browsing
-    url(r'^$', 'django.views.generic.simple.direct_to_template', {'template': 'index.html'}, name="homepage"),
+    #url(r'^$', 'django.views.generic.simple.direct_to_template', {'template': 'index.html'}, name="homepage"),
 
     #Account management
     #(r'^account/$', account),
