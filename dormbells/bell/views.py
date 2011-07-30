@@ -23,7 +23,7 @@ def create_confirm(request):
     else:
         form = ConfirmationCodeForm()
     
-    return render_to_response('confirm.html', {
+    return render_to_response('create_confirm.html', {
         'form': form,
     })
 
