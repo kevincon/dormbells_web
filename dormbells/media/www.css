@@ -32,6 +32,7 @@ overflow:hidden;
 #sitename
 {
 float:left;
+padding-left:0px;
 }
 
 #sitename a 
@@ -113,8 +114,8 @@ color:gold;
 
 #gold-bar
 {
-height:0.5em;
-background-color:gold;
+height:0.3em;
+background-color:black;
 }
 
 #content
@@ -144,12 +145,12 @@ float:right;
 
 #footer
 {
-border-top:solid gold 0.5em;
+border-top:solid black 0em;
 width:100%;
 position:absolute;
 bottom:0;
 background-color:#1B84E0;
-height:4em;
+height:1.5em;
 }
 
 #footer h3 
