@@ -1,3 +1,0 @@
-Hi {{user}},
-
-Your Dormbell is one step away. Just enter your token {{token}} at dormbells.com/confirm!
