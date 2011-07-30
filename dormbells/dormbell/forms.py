@@ -3,18 +3,22 @@ from django.contrib.auth.models import User
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from generic_confirmation.forms import DeferredForm
+from models import Dormbell
+from carriers import CARRIERS
 
 class DormbellCreationForm(DeferredForm):
+    phone_number = forms.CharField(max_length=20)
+    carrier = forms.ChoiceField(choices=CARRIERS)    
+
     def send_notification(self, user=None, instance=None):
 	title = ""
 	message = render_to_string("confirm_mail.txt",
 				{'token': instance.token, 'user': user})
 	#FIXME Construct URL using phone number and carrier for recipients
-	recipients = ['9164718668@txt.att.net',]#self.cleaned_data['email'],]
-	sender = 'Dormbells'
+	recipients = ['kevindconley@gmail.com',]#self.cleaned_data['email'],]
+	sender = 'bot@dormbells.com'
 	send_mail(title, message, sender, recipient_list=recipients)
 
-    token_format = SHORT_UPPER
     class Meta:
         model = Dormbell 
         fields = ('activated',)
