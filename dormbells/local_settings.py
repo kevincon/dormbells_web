@@ -1,4 +1,7 @@
-MEDIA_ROOT = 'C:/Users/Ceasar/Desktop/dormbells2/repo/dormbells/media'
+import os.path
+
+PROJECT_ROOT = 'C:/Users/Ceasar/Desktop/dormbells/'
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
 
 DATABASES = {
     'default': {

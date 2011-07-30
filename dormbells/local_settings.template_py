@@ -1,6 +1,6 @@
 import os.path
 
-PROJECT_ROOT = /Users/tlee/SVN/dormbells/
+PROJECT_ROOT = 'C:/Users/Ceasar/Desktop/dormbells/'
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
 
 DATABASES = {
@@ -13,4 +13,5 @@ DATABASES = {
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
+
 

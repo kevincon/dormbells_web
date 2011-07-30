@@ -1,6 +1,6 @@
 from django.conf.urls.defaults import *
 
-from local_setting import MEDIA_ROOT
+from local_settings import MEDIA_ROOT
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
