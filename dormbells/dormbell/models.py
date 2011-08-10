@@ -2,7 +2,7 @@ from django.template.loader import render_to_string
 from django.core.mail import send_mail
 from django.contrib.auth.models import User
 from django.db import models
-from carriers import CARRIERS
+from carriers import CARRIERS, LEGEND
 
 class Dormbell(models.Model):
     consecutive_limit = models.IntegerField()
@@ -44,8 +44,8 @@ class SMSRinger(Ringer):
         title = ""
         message = render_to_string("ring.txt", {})
         #FIXME Construct URL using phone number and carrier for recipients
-        constructed_email = self.phone_number + '@txt.att.net'
-        recipients = [constructed_email,]#self.cleaned_data['email'],]
+        constructed_email = self.phone_number + '@' + LEGEND[self.carrier]
+	recipients = [constructed_email,]#self.cleaned_data['email'],]
         sender = 'Dormbells'
         send_mail(title, message, sender, recipient_list=recipients)
 

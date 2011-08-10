@@ -1,5 +1,5 @@
 from django.template import Library
-from generic_confirmation.models import DeferredAction
+from dormbells.generic_confirmation.models import DeferredAction
 
 register = Library()
 

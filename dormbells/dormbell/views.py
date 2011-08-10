@@ -103,5 +103,4 @@ def ringer(request, uuid):
     return HttpResponse("")
 
 def about(request):
-    context = { 'qr_code_url': request.session['qr_code_url'] }
-    return render_to_response("about.html", RequestContext(request, context))
+	return render_to_response("about.html")

@@ -2,7 +2,7 @@
 import os.path
 from local_settings import MEDIA_ROOT, DATABASES
 
-DEBUG = True
+DEBUG = False 
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -90,6 +90,6 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-    'dormbell',
-    'generic_confirmation',
+    'dormbells.dormbell',
+    'dormbells.generic_confirmation',
 )

@@ -2,6 +2,8 @@
 
 {% block content %}
 <h1>Confirm your Dormbell!</h1>
+<p>We just sent you a text message with a confirmation code. Please enter it below so we know it's really you.
+<br>
 <form action="/confirm/" method="post">{% csrf_token %}
 {{ form }}
 <input type="submit" value="Submit" />

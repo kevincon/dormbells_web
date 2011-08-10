@@ -6,3 +6,12 @@ CARRIERS = (
 	('SPRINT', 'Sprint'),
 	('VERIZON', 'Verizon'),
 )
+
+LEGEND = {
+	'AT&T': 'txt.att.net',
+	'BOOST': 'myboostmobile.com',
+	'CRICKET': 'sms.mycricket.com',
+	'TMOBILE': 'tmomail.net',
+	'SPRINT': 'messaging.sprintpcs.com',
+	'VERIZON': 'vtext.com',
+}
